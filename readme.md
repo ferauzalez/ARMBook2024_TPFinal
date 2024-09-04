@@ -6,7 +6,7 @@
 ## Planificación
 - Presentación: 17/08/2024
 - Aprobación: 18/08/2024
-- Correción: 19/08/2024
+- Corrección: 19/08/2024
   
 ### Proyectos a evaluar
 
@@ -142,7 +142,7 @@ Se considera la instalación de algunos periféricos sobre una ventana de dos ho
 ## Informe de avance
 - Presentación: 31/08/2024
 
-El estado del proyecto en la fecha de presentacón se presenta en la siguiente tabla.
+El estado del proyecto en la fecha de presentación se presenta en la siguiente tabla.
 ![arm_book_curso_2024_TP_final_tabla_informe_avance](https://github.com/user-attachments/assets/0e5fc095-4fea-43cc-b81b-8449981e8105)
 
 ### Observaciones
