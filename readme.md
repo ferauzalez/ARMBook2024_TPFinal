@@ -2,7 +2,13 @@
 ## Datos
 - Nombre: Alarma de seguridad para aberturas
 - Alumno: Fernando Augusto González
-## Proyectos a evaluar
+
+## Planificación
+- Presentación: 17/08/2024
+- Aprobación: 18/08/2024
+- Corrección: 19/08/2024
+  
+### Proyectos a evaluar
 
 Los proyectos a analizar son dos, de acuerdo a una cuestión de personal de necesidad coyuntural y motivación:
 - **Timer para gimnasios:** Un temporizador programable con tiempos de ejercitación y descanso, y número de repeticiones. Los datos se muestran mediante un display de cuatro dígitos de siete segmentos cada uno. Posee una botonera para configurar las cuentas regresivas e iniciar y pausar la cuenta, también posee una interfaz de usuario mediante smartphone y conexión BLE para realizar las mismas acciones. Posee un buzzer para avisar al usuario que la cuenta termina. Posee LEDs indicadores del modo de funcionamiento activo en un momento dado.
@@ -18,8 +24,8 @@ Se consideró los siguientes criterios y sus respectivas ponderaciones:
 - **Posibilidad de ampliación**: Qué posibilidades tiene el proyecto de expandirse para implementar nuevas funcionalidades en futuras etapas. A mayor posibilidad mayor valor. Ponderación 2.
 
 Los criterios usados para la evaluación de los proyectos se evaluaron con un valor del 1 al 5. Esto es debido a que los criterios corresponden a apreciaciones personales y resultó más fácil establecer un puntaje en ese rango que en un rango más amplio (por ejemplo del 1 al 10). 
-## Evaluación de proyectos
-### Timer para gimnasios
+### Evaluación de proyectos
+#### Timer para gimnasios
 - **Disponibilidad del hardware**: 4. Se establece este puntaje debido a que se tiene en cuenta la disponibilidad de un display de cuatro dígitos y 7 segmentos de 40 cm de ancho por 20 cm de alto aproximadamente, fabricado con leds de 5mm de alto brillo. Pero además es necesario hacer correcciones sobre algunas conexiones del display porque los cables no tienen buena presentación y si bien los mismos se encuentran invisibles al usuario final, por una cuestión de gusto personal se establece el requerimiento de mejorar la presentación del conexionado.
 - **Tiempo de implementación**: 4. Se establece este puntaje debido a que se cuenta con una implementación similar del proyecto en cuestiones de hardware. Entonces los cambios más importantes pasan por el firmware.
 - **Facilidad de implementación**: 3. A simple vista los desafíos más importantes son la utilización de programación orientada a objetos y escritura de los drivers de los módulos que componen el proyecto. Si bien se cuenta con conocimientos de programación orientada a objetos, el paradigma fue usado en lenguajes como Python y Javascript. Por tanto el uso de ese paradigma con el lenguaje C++ presenta un desafío. Además, en el pasado se usó bibliotecas de código escritas por usuarios desconocidos, para el entorno Arduino; la realización de este proyecto implicaría a priori la realización de bibliotecas propias, por lo que también representa un desafío. 
@@ -29,7 +35,7 @@ Los criterios usados para la evaluación de los proyectos se evaluaron con un va
 - **Posibilidad de ampliación**: 5. Una vez finalizado el proyecto, se pueden incluir otras etapas en donde se agregue un display de 7 segmentos para indicar el número de repeticiones en todo momento, otra etapa en donde se agregue una placa de sonido para reproducir sonidos desde una tarjeta SD, etc. 
 - **Puntaje final ponderado**: 91
 
-### Alarma de seguridad para aberturas
+#### Alarma de seguridad para aberturas
 - **Disponibilidad del hardware**: 5. Se cuenta con todos componentes necesarios para realizar la implementación
 - **Tiempo de implementación**: 2. Se establece este puntaje debido a que todo el sistema deberá diseñarse, nunca se trató esta problemática con anterioridad, por lo que es un desafío nuevo. 
 - **Facilidad de implementación**: Se mantiene lo dicho en la evaluación anterior de que "_los desafíos más importantes son la utilización de programación orientada a objetos y escritura de los drivers de los módulos que componen el proyecto_". Pero además, al ser una problemática nueva, presenta una dificultad mayor. Se establece un puntaje de 1.
@@ -44,7 +50,7 @@ Se resume la evaluación anterior en la tabla 1:
 
 Tabla 1. Evaluación de los proyectos preseleccionados
 
-## Resultado de la evaluación
+### Resultado de la evaluación
 El proyecto con mayor puntaje es **Alarma de seguridad para aberturas**. Los valores que agrega este proyecto son varios. En principio la posibilidad de aprendizaje, teniendo en cuenta el uso del paradigma de la programación orientada a objetos en el lenguaje C++, el uso de máquina de estados, el uso de un display LCD y el protocolo Wi-Fi. Luego, la satisfacción de una necesidad personal, debido a un robo en mi hogar recientemente. Otro elemento a destacar es la función de disuación implementada mediante un buzzer, de manera de proporcionar una advertencia previa antes de hacer sonar la sirena principal si es que la señal de advertencia se mantiene activa durante cierto tiempo programado. Por último, este proyecto es de suma importancia para que los usuarios tengan más tranquilidad, sobre todo durante el tiempo de descanso nocturno, incrementando la calidad del sueño.
 
 En la Fig. 1 se presenta el diagrama en bloques del sistema. Se observa los periféricos a utilizar y el modo de conexión con la unidad central de procesamiento constituida por la placa NÚCLEO-F401RE.
@@ -55,7 +61,7 @@ Figura 1. Diagrama en bloques del sistema
 Cabe destacar que **este proyecto se considera como una primer etapa** de un sistema de **alarma para el hogar**. En implementaciones futuras se considera agregar etapas en donde se involucren sensores infrarrojos y magnéticos para colocar sobre puertas y otras ventanas e introducir nuevas funcionalidades que mejoren la experiencia del usuario. Debido a los tiempos de implementación se propone este proyecto como final del curso con la idea de lograr un proyecto alcanzable en un corto tiempo.
 
 ---
-## Periféricos
+### Periféricos
 Se considera la instalación de algunos periféricos sobre una ventana de dos hojas.
 
 - Sensores magnéticos: Similar al de [este link](https://www.mercadolibre.com.ar/sensor-magnetico-para-alarma-puerta-ventana-precableado/p/MLA28522217#polycard_client=search-nordic&searchVariation=MLA28522217&position=13&search_layout=stack&type=product&tracking_id=d17efc7b-a2ca-45d7-8cee-286b9a0e3c41&wid=MLA1400275267&sid=search). La separación del par indicará que la abertura está abierta. Irá colocado sobre las hojas de la ventana.
@@ -66,7 +72,7 @@ Se considera la instalación de algunos periféricos sobre una ventana de dos ho
 - LED 1: Indicará que el sistema está activo
 - GUI smartphone: Indicará al usuario los eventos registrados.
 - Teclado matricial: Permitirá al usuario activar/desactivar el sistema mediante contraseña
-## Análisis de sistemas disponibles en el mercado
+### Análisis de sistemas disponibles en el mercado
 
 | Características     |                                                                                                                            Sensor Magnético Para Puertas Ventanas Programable GADNIC                                                                                                                            |                                                                                                                   Sensor Puerta Ventanas Smart Macroled                                                                                                                    |                                                                                                                               Sensor Wifi Para Puertas Y Ventanas Inteligente Magnetico Smart Life Demasled                                                                                                                                |
 | ------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -79,7 +85,7 @@ Se considera la instalación de algunos periféricos sobre una ventana de dos ho
 | Sensores            |                                                                                                                                         1 sensor magnético inalámbrico                                                                                                                                          |                                                                                                                       1 sensor magnético inalámbrico                                                                                                                       |                                                                                                                                                       1 sensor magnético inalámbrico                                                                                                                                                       |
 | Sonido              |                                                                                                                                                       SÍ                                                                                                                                                        |                                                                                                                                     NO                                                                                                                                     |                                                                                                                                                                     SÍ                                                                                                                                                                     |
 
-## Requerimientos del sistema
+### Requerimientos del sistema
 | Grupo             | Id  | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. LED            | 1.1 | Debe encenderse cuando la alarma está activa                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -102,7 +108,7 @@ Se considera la instalación de algunos periféricos sobre una ventana de dos ho
 |                   | 6.2 | No debe realizar disparar ninguna acción si el pulsador no es presionado                                                                                                                                                                                                                                                                                                                                                         |
 | 7. GUI smartphone | 7.1 | Al conectarse al sistema debe leer el estado activo/inactivo de los sensores ultrasónico y magnético. Asimismo debe leer si el sistema está activo o inactivo.                                                                                                                                                                                                                                                                   |
 
-## Casos de uso
+### Casos de uso
 
 | CU 1              | El usuario desea activar el sistema                                                                                                                                                           |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -131,3 +137,24 @@ Se considera la instalación de algunos periféricos sobre una ventana de dos ho
 | Precondición      | La alimentación del sistema está conectada y el sistema está activo.                                                                                                                                                                                                                                                                                                        |
 | Flujo básico      | El usuario ingresa la contraseña correcta mediante el teclado matricial, el buzzer 2 suena dando dos pitidos con un silencio en el medio y el sistema entra en modo inactivo                                                                                                                                                                                                |
 | Flujo alternativo | El usuario no ingresa la contraseña correcta o demora más de treinta segundos en completar el ingreso de la contraseña. En ese caso el sistema el sistema da una segunda oportunidad para ingresar la contraseña correcta pero el buzzer 2 debe emitir pitidos intermitentes. Si se ingresa una contraseña incorrecta o se agota el tiempo de espera, debe sonar la bocina. |
+
+
+## Informe de avance
+- Presentación: 31/08/2024
+
+El estado del proyecto en la fecha de presentación se presenta en la siguiente tabla.
+![arm_book_curso_2024_TP_final_tabla_informe_avance](https://github.com/user-attachments/assets/0e5fc095-4fea-43cc-b81b-8449981e8105)
+
+### Observaciones
+- Se modifica el requisito 5.2. 
+  - Requisito original: "No debe sonar la bocina si el estado de alarma no está activo o si el mismo está activo pero se ingresa la contraseña correcta para desactivar el sistema"
+  - Requisito modificado: "No debe sonar la bocina si el estado de alarma no es 'activo'"
+  - Motivo: Un cambio de opinión sobre el diseño. La bocina sólo debe sonar si el estado del sistema es 'activo'. Cuando se introduce la contraseña correcta el estado debe pasar a 'inactivo'.
+
+- Se corrige error de redacción en requisito 6.2
+  - Requisito original: "No debe realizar disparar ninguna acción si el pulsador no es presionado"
+  - Requisito modificado: "No debe disparar ninguna acción si el pulsador no es presionado"
+ 
+- Sobre el requisito 7.1: A la fecha de presentación aún no se pudo implementar la interfaz de usuario mediante smartphone debido a inconvenientes con el [firmware](https://docs.espressif.com/projects/esp-at/en/latest/esp32/Get_Started/What_is_ESP-AT.html) para recibir comandos AT en la placa nodemcu ESP32. En los días siguientes se intentará lograr la conectividad propuesta, en caso contrario se modificará para implementar la interfaz de usuario mediante terminal bluetooth en smartphone.
+
+
