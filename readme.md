@@ -609,7 +609,7 @@ if (readReedSwitchValue() == kReedSwitchValueWhenIsOpened) {
 Fragmento 5. Implementación de la actualización de los reportes del sensor ultrasónico y magnético.
 
 
-![FSM_alarm](figures/figura_9_arm_book_curso_2024_TP_final_diagrama_FSM_alarm_v2.png).
+![FSM_alarm](figures/figura_9_arm_book_curso_2024_TP_final_diagrama_FSM_alarm_v2.png)
 
 Figura 9. Diagrama de máquina de estados del sistema 'alarm'. El texto en negrita corresponde a los nombres de los estados. El texto en color azul corresponde a las condiciones de transición, el color rojo corresponde a las salidas.
 
