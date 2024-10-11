@@ -229,14 +229,14 @@ Figura 3. Detalle de los pines (_pinout_) de la placa NodeMCU-32S.
 
 En el presente trabajo, para implementar la conectividad mediante *Wi-Fi*, se empleó la herramienta *ESP-AT* [2]. Esta herramienta es un proyecto desarrollado por la empresa *Espressif* (fabricante del chip ESP-32S). Hace que una placa *NodeMCU-32S* funcione como *subordinada* y una MCU como *manager*. En el presente trabajo la placa NUCLEO-F401RE actuó como manager. La MCU *manager* envía comandos AT a la placa *NodeMCU-32S* y recibe respuestas AT de vuelta. ESP-AT proporciona una amplia gama de comandos AT con diferentes funciones, como comandos Wi-Fi, comandos TCP/IP, comandos Bluetooth LE, comandos Bluetooth, comandos MQTT, comandos HTTP y comandos Ethernet. 
 
-## 2.4 Descripción del patrón de diseño estado
+### 2.4 Descripción del patrón de diseño estado
 
 Para la implementación de las máquinas de estado del presente trabajo se utilizó el concepto de patrón de diseño aplicado junto con el lenguaje de programación C++. Los patrones de diseño son soluciones habituales a problemas comunes en el diseño de software. Cada patrón es como un plano que se puede personalizar para resolver un problema de diseño particular de un código.
 En particular, se utilizó el patrón de diseño estado [4] el cual se adecúa al concepto de máquina de estados finitos. Mediante este patrón, un objeto puede alterar su comportamiento de acuerdo a un número finito de estados. Dentro de cada estado único, el programa se comporta de forma diferente y puede cambiar de un estado a otro instantáneamente. Sin embargo, dependiendo de un estado actual, el programa puede cambiar o no a otros estados. Estas normas de cambio llamadas transiciones también son finitas y predeterminadas.
 
 Los estados son implementados mediante clases [5], teniendo una clase por cada estado posible de un objeto. Además, existe un objeto original llamado contexto. El contexto, en lugar de implementar todos los comportamientos por su cuenta, almacena una referencia a uno de los objetos de estado que representa su estado actual y delega todo el trabajo relacionado con el estado a ese objeto. Para la transición del contexto a otro estado, sustituye el objeto de estado activo por otro objeto que represente ese nuevo estado. Esto sólo es posible si todas las clases de estado siguen la misma interfaz y el propio contexto funciona con esos objetos a través de esa interfaz.
 
-### 2.4.1 Estructura
+#### 2.4.1 Estructura
 
 En la figura 4 se muestra un diagrama de clases con la estructura del patrón de diseño estado que se implementó en el presente trabajo. En dicha estructura, la clase *contexto* almacena una referencia a uno de los objetos de *estado concreto* y le delega todo el trabajo específico del estado a través de la *interfaz de estado*. El contexto también expone un modificador (_setter_) para configurar un nuevo objeto de estado.
 Por otro lado, la *interfaz estado* declara los métodos específicos del estado y los estados concretos proporcionan sus propias implementaciones para los métodos específicos del estado. Los objetos de estado pueden almacenar una referencia inversa al objeto de contexto. A través de esta referencia, un estado concreto puede extraer cualquier información requerida del objeto de contexto, así como iniciar transiciones de estado. Tanto el estado de contexto como el concreto pueden establecer el nuevo estado del contexto y realizar la transición de estado sustituyendo el objeto de estado vinculado al contexto.
@@ -608,7 +608,8 @@ if (readReedSwitchValue() == kReedSwitchValueWhenIsOpened) {
 ```
 Fragmento 5. Implementación de la actualización de los reportes del sensor ultrasónico y magnético.
 
-![FSM_alarm](figures/figura_9_arm_book_curso_2024_TP_final_diagrama_FSM_alarm_V2.png)
+
+![FSM_alarm](figures/figura_9_arm_book_curso_2024_TP_final_diagrama_FSM_alarm_v2.png).
 
 Figura 9. Diagrama de máquina de estados del sistema 'alarm'. El texto en negrita corresponde a los nombres de los estados. El texto en color azul corresponde a las condiciones de transición, el color rojo corresponde a las salidas.
 
