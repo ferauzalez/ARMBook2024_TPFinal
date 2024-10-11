@@ -528,6 +528,7 @@ Tabla 15. Métodos públicos de la clase 'Wifi'.
 ### 3.5 Interfaz de usuario web
 
 En la figura se muestra la interfaz de usuario implementada en archivo html y renderizada mediante un navegador web.
+
 ![GUI](figures/figura_8_arm_book_curso_2024_TP_final_gui.png)
 
 Figura 8. Ejemplo de pantalla de interfaz de usuario visualizada mediante navegador web.
